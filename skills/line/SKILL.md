@@ -142,6 +142,9 @@ line message status <id>            # судьба отправки по id из
 ```sh
 line media download <attachment_id> -o ./smeta.pdf      # id из attachment.id в ленте
 line media download <attachment_id> --url-only          # только временный адрес
+# вложение без attachment.id (лежит у мессенджера): по адресу сообщения; --text в ленте подсказывает команду
+line media download --message <key> <chat_id> <external_id> -o ./file   # альбом: добавь -n 1, -n 2…
+line media download <attachment.download из ленты> -o ./file            # то же, по готовому пути
 line media upload ./photo.jpg                           # положить файл, получить attachment_id
 ```
 

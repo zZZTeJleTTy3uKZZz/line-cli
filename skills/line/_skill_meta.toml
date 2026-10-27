@@ -1,6 +1,6 @@
 # Манифест навыка line для Skillery. Нативный Go-CLI: Python-пакета и шима нет.
 description = "Go-клиент «Линии» (омниканальный шлюз): агент читает и пишет в Telegram, MAX и WhatsApp по API-ключу — диалоги, лента, отправка с файлами, вложения, поиск контакта, ссылка входа для подключения нового аккаунта."
-version = "0.1.2"
+version = "0.1.3"
 kind = "tooling"
 triggers = [
     "прочитай чат",
@@ -30,7 +30,7 @@ entrypoint = "~/.local/bin/line"
 [onboarding]
 summary = "line — нативный Go-клиент API «Линии». Навык даёт инструкции и установщик бинарника; ключ API выдаётся входом устройства (`line auth login`), хранится в связке ключей ОС или в ~/.config/line/<профиль>.key и в навык не входит."
 next_steps = [
-    "REQUIRED: проверь `line --version` (ожидается 0.1.2 или новее). Нет бинарника или версия старее — запусти установщик навыка: `bash ~/.claude/skills/line/install/install.sh` (Linux, WSL, macOS; путь к навыку — каталог, куда он установлен) или `powershell -ExecutionPolicy Bypass -File <каталог навыка>\\install\\install.ps1` (Windows). Он качает бинарник из публичного GitHub Release с проверкой SHA256SUMS в ~/.local/bin; нужен только curl/tar (Windows — PowerShell). Если `line` не находится — добавь ~/.local/bin в PATH и открой новый терминал.",
+    "REQUIRED: проверь `line --version` (ожидается 0.1.3 или новее). Нет бинарника или версия старее — запусти установщик навыка: `bash ~/.claude/skills/line/install/install.sh` (Linux, WSL, macOS; путь к навыку — каталог, куда он установлен) или `powershell -ExecutionPolicy Bypass -File <каталог навыка>\\install\\install.ps1` (Windows). Он качает бинарник из публичного GitHub Release с проверкой SHA256SUMS в ~/.local/bin; нужен только curl/tar (Windows — PowerShell). Если `line` не находится — добавь ~/.local/bin в PATH и открой новый терминал.",
     "REQUIRED: войди с этого устройства: `line auth login` (профиль — `--profile <имя>`). Команда напечатает ссылку и код и откроет браузер; руководитель компании жмёт «Разрешить» в кабинете, ключ сохраняется сам. Ключ в беседу не вставлять.",
     "REQUIRED: `line auth status` — ключ принят; `line connection list --text` — есть подключённый аккаунт.",
     "OPTIONAL: нет аккаунта — `line auth login --rights read,send,admin`, затем `line connection add telegram` и передай login_link.url владельцу (references/connect-account.md).",

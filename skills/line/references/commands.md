@@ -25,7 +25,9 @@
 | `message send <key> [chat_id] [--text\|--text-file] [--file]... [--phone] [--known-only] [--reply-to] [--wait D]` | POST /messages (+POST /media) | отправить |
 | `message status <id>` | GET /messages/{id} | судьба отправки |
 | `media upload <файл>` | POST /media | положить файл, получить attachment_id |
-| `media download <id> -o файл [--force] [--url-only]` | GET /media/{id} | скачать вложение |
+| `media download <id> -o файл [--force] [--url-only]` | GET /media/{id} | скачать вложение со склада Линии |
+| `media download --message <key> <chat_id> <external_id> [-n N] -o файл` | GET /chats/{key}/{chat_id}/messages/{external_id}/attachment | скачать вложение сообщения, в том числе лежащее у мессенджера (нет attachment.id); `-n` — номер в альбоме с нуля |
+| `media download <url> -o файл` | GET по `attachment.download` | то же по адресу из ленты |
 | `contact find <номер\|имя>` | GET /contacts?phone= / список диалогов | найти человека |
 | `contact get <id>` / `check <номер> --connection K` | GET /contacts/{id} / POST /contacts/check | карточка / есть ли номер в мессенджере |
 | `search <текст> [--messages] [--connection]` | GET /chats (+ленты) | поиск на клиенте |
