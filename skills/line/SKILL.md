@@ -9,7 +9,7 @@ Respond in the user's language.
 
 # line — мессенджеры через «Линию»
 
-`line` — Go-клиент публичного API «Линии» v2 (`https://api.line.pragmati.ru/v2`).
+`line` — Go-клиент публичного API «Линии» v2 (`https://api.liiniya.ru/v2`).
 Один централизованный аккаунт в Линии держит сессии Telegram, MAX и WhatsApp;
 агент ходит туда по API-ключу и не логинится в мессенджеры сам.
 Вывод — JSON по умолчанию (`--text` / `--human` — таблицы для человека).
@@ -64,13 +64,13 @@ Takeout. Линия этого не делает. Если нужен вход �
    (`admin apikey create --client <клиент> --rights read,send`), кладём через stdin:
 
    ```sh
-   printf '%s' "$KEY" | line auth set --profile work --set-url https://api.line.pragmati.ru
+   printf '%s' "$KEY" | line auth set --profile work --set-url https://api.liiniya.ru
    ```
 
    Ключ ищется так: `LINE_API_KEY` → связка ключей ОС → `~/.config/line/<профиль>.key` (0600).
    Профиль: `--profile` → `LINE_PROFILE` → `line auth use <профиль>` → единственный найденный.
-   Адрес: `--url` → `LINE_API_URL` → `<профиль>.env` → `https://api.line.pragmati.ru`.
-   Адрес — именно `api.line.pragmati.ru`, а не `app.line...` (это веб-кабинет).
+   Адрес: `--url` → `LINE_API_URL` → `<профиль>.env` → `https://api.liiniya.ru`.
+   Адрес — именно `api.liiniya.ru`, а не `app.liiniya.ru` (это веб-кабинет). Прежний `api.line.pragmati.ru` остаётся рабочим алиасом: профили и `LINE_API_URL` со старым адресом менять не нужно.
 
 ## Instructions
 

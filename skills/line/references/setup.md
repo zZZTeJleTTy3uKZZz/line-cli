@@ -45,7 +45,7 @@ line auth login --profile work --device-name "ноутбук" --rights read,send
 ## Ключ вручную и профили
 
 ```sh
-printf '%s' "$KEY" | line auth set --profile work --set-url https://api.line.pragmati.ru
+printf '%s' "$KEY" | line auth set --profile work --set-url https://api.liiniya.ru
 line auth use work            # профиль по умолчанию
 line auth profiles               # список
 line auth status                 # проверка ключа запросом GET /connections
@@ -57,5 +57,5 @@ line auth remove --profile work
 `LINE_KEYRING=off` отключает связку. Каталог настроек — `LINE_CONFIG_DIR`.
 
 Переменные окружения: `LINE_API_KEY`, `LINE_API_URL`, `LINE_PROFILE`.
-Адрес API — `https://api.line.pragmati.ru` (версию `/v2` клиент добавит сам).
-`app.line.pragmati.ru` — это веб-кабинет, в API не годится.
+Адрес API — `https://api.liiniya.ru` (версию `/v2` клиент добавит сам). Прежний `https://api.line.pragmati.ru` работает как алиас без срока.
+`app.liiniya.ru` — это веб-кабинет, в API не годится.

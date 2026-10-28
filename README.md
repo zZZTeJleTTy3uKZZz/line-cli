@@ -1,6 +1,6 @@
 # line-cli
 
-Go-клиент публичного API «Линии» v2 (`https://api.line.pragmati.ru/v2`) и навык Skillery `line`:
+Go-клиент публичного API «Линии» v2 (`https://api.liiniya.ru/v2`) и навык Skillery `line`:
 агенты читают и пишут в Telegram, MAX и WhatsApp через подключённые в Линии аккаунты по API-ключу,
 без личных сессий `tg`/`max` на каждом устройстве.
 
@@ -24,7 +24,7 @@ line message send <key> <chat_id> --text "Привет" --wait 3m --human
 ## Настройки
 
 Ключ: `LINE_API_KEY` → связка ключей ОС → `~/.config/line/<профиль>.key` (0600).
-Адрес: `--url` → `LINE_API_URL` → `<профиль>.env` → `https://api.line.pragmati.ru`.
+Адрес: `--url` → `LINE_API_URL` → `<профиль>.env` → `https://api.liiniya.ru` (прежний `https://api.line.pragmati.ru` остаётся рабочим алиасом).
 Профиль: `--profile` → `LINE_PROFILE` → `line auth use` → единственный найденный.
 Ключ нигде не печатается и не попадает в репозиторий.
 
