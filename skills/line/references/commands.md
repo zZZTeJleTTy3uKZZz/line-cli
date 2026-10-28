@@ -24,6 +24,8 @@
 | `message list <key> <chat_id> [--limit] [--before]` | GET /chats/{key}/{chat_id}/messages | лента |
 | `message send <key> [chat_id] [--text\|--text-file] [--file]... [--phone] [--known-only] [--reply-to] [--wait D]` | POST /messages (+POST /media) | отправить |
 | `message status <id>` | GET /messages/{id} | судьба отправки |
+| `bot start <key> --bot <имя\|номер> [--payload <метка>]` | POST /chats/{key}/bot-starts | «Старт» чужого бота от личного MAX: бот получает bot_started с меткой; в ответе chat_id |
+| `message press <key> <chat_id> <external_id> --payload <код>\|--button <ряд:кнопка>` | POST /chats/{key}/{chat_id}/messages/{external_id}/presses | нажать кнопку CALLBACK под сообщением бота (место с нуля) |
 | `media upload <файл>` | POST /media | положить файл, получить attachment_id |
 | `media download <id> -o файл [--force] [--url-only]` | GET /media/{id} | скачать вложение со склада Линии |
 | `media download --message <key> <chat_id> <external_id> [-n N] -o файл` | GET /chats/{key}/{chat_id}/messages/{external_id}/attachment | скачать вложение сообщения, в том числе лежащее у мессенджера (нет attachment.id); `-n` — номер в альбоме с нуля |
